@@ -1,0 +1,26 @@
+{
+    "index" : {
+        "analysis" : {
+            "analyzer" : {
+                "name_analyzer" : {
+                    "type" : "custom",
+                    "tokenizer" : "standard",
+                    "filter" : [ "asciifolding", "lowercase", "name_ngram"]
+                },
+                "name_analyzer_search" : {
+                    "type" : "custom",
+                    "tokenizer" : "standard",
+                    "filter" : [ "asciifolding", "lowercase"]
+                }
+            },
+            "filter" : {
+                "name_ngram" : {
+                    "type" : "edgeNGram",
+                    "min_gram" : 1,
+                    "max_gram" : 20,
+                    "side" : "front"
+                }
+            }
+        }
+    }
+}

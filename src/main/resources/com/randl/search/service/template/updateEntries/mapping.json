@@ -1,0 +1,20 @@
+{
+    "template": {
+        "properties": {
+            "category": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string",
+                "index": "not_analyzed",
+                "omit_norms": true,
+                "index_options": "docs"
+            },
+            "name": {
+                "type": "string",
+                "analyzer": "name_analyzer",
+                "include_in_all": false
+            }
+        }
+    }
+}
